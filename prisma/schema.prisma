@@ -1,0 +1,57 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id // Discord user ID
+  xp        Int      @default(0)
+  streak    Int      @default(0)
+  lastActive DateTime?
+  submissions Submission[]
+  notes     Note[]
+  createdAt DateTime @default(now())
+}
+
+model Question {
+  id         Int      @id @default(autoincrement())
+  title      String
+  difficulty String   // Easy, Medium, Hard
+  topic      String
+  description String
+  examples   String
+  hints      String?
+  submissions Submission[]
+}
+
+model Submission {
+  id         Int      @id @default(autoincrement())
+  userId     String
+  questionId Int
+  code       String
+  language   String
+  status     String   @default("submitted") // submitted, reviewed
+  user       User     @relation(fields: [userId], references: [id])
+  question   Question @relation(fields: [questionId], references: [id])
+  createdAt  DateTime @default(now())
+}
+
+model Note {
+  id        Int      @id @default(autoincrement())
+  userId    String
+  title     String
+  content   String
+  tags      String[] // PostgreSQL array
+  user      User     @relation(fields: [userId], references: [id])
+  createdAt DateTime @default(now())
+}
+
+model DailyQuestion {
+  id         Int      @id @default(autoincrement())
+  questionId Int      @unique
+  date       DateTime @unique @default(now()) @db.Date
+}

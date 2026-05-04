@@ -1,0 +1,25 @@
+{
+  "name": "aurora-bot",
+  "version": "1.0.0",
+  "description": "Aurora — Your personal AI mentor for coding, careers, and interviews",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "db:push": "npx prisma db push",
+    "db:seed": "node prisma/seed.js",
+    "deploy-commands": "node src/deploy-commands.js"
+  },
+  "dependencies": {
+    "@prisma/client": "^6.9.0",
+    "discord.js": "^14.18.0",
+    "groq-sdk": "^0.9.0",
+    "dotenv": "^16.5.0"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "devDependencies": {
+    "prisma": "^6.9.0"
+  }
+}
