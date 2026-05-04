@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora — Privacy Policy</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-static@latest/font/lucide.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0b;
+            color: #e4e4e7;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .grain {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .glow {
+            position: fixed;
+            top: -200px; left: 50%;
+            transform: translateX(-50%);
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.12) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(10, 10, 11, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 16px 0;
+            z-index: 100;
+        }
+
+        nav .inner {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        nav .logo .dot {
+            width: 8px; height: 8px;
+            background: #7c3aed;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        nav .links a {
+            color: #a1a1aa;
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: 24px;
+            transition: color 0.2s;
+        }
+
+        nav .links a:hover { color: #fff; }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 24px 100px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            color: #a78bfa;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 6px 14px;
+            border-radius: 100px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            font-size: 40px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            color: #71717a;
+            font-size: 15px;
+            margin-bottom: 48px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .section-icon {
+            width: 36px; height: 36px;
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid rgba(124, 58, 237, 0.15);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #a78bfa;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        p {
+            color: #a1a1aa;
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 12px;
+        }
+
+        ul li {
+            color: #a1a1aa;
+            font-size: 15px;
+            padding: 6px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 14px;
+            width: 6px; height: 6px;
+            background: #7c3aed;
+            border-radius: 50%;
+        }
+
+        .divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.06);
+            margin: 40px 0;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 12px;
+        }
+
+        .card strong {
+            color: #e4e4e7;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 12px;
+        }
+
+        table th, table td {
+            text-align: left;
+            padding: 12px 16px;
+            font-size: 14px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+        }
+
+        table th {
+            color: #a78bfa;
+            font-weight: 600;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        table td {
+            color: #a1a1aa;
+        }
+
+        a { color: #a78bfa; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            color: #52525b;
+            font-size: 13px;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="grain"></div>
+    <div class="glow"></div>
+
+    <nav>
+        <div class="inner">
+            <a href="#" class="logo"><span class="dot"></span> Aurora</a>
+            <div class="links">
+                <a href="terms.html">Terms</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="https://github.com/xau-aman/Aurora-Bot">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="badge">
+            <i class="lucide-shield" style="font-size: 12px;"></i>
+            Privacy
+        </div>
+        <h1>Privacy Policy</h1>
+        <p class="subtitle">Last updated: May 5, 2026</p>
+
+        <div class="card" style="margin-bottom: 40px;">
+            <p><strong>The short version:</strong> Aurora collects only what it needs to function. We store your Discord user ID and the data you explicitly create (notes, submissions, XP). We do not sell, share, or monetize your data. Ever.</p>
+        </div>
+
+        <!-- Section 1 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon"><i class="lucide-info"></i></div>
+                <h2>1. Information We Collect</h2>
+            </div>
+            <p>Aurora collects the following data when you interact with the bot:</p>
+
+            <table>
+                <thead>
+                    <tr>
+                        <th>Data</th>
+                        <th>Purpose</th>
+                        <th>Stored</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Discord User ID</td>
+                        <td>Identify your account across sessions</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>XP and Streak Data</td>
+                        <td>Gamification, progress tracking</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Code Submissions</td>
+                        <td>Track solved problems</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>Notes</td>
+                        <td>Your personal second brain</td>
+                        <td>Yes</td>
+                    </tr>
+                    <tr>
+                        <td>AI Questions</td>
+                        <td>Generate responses</td>
+                        <td>Not stored by Aurora</td>
+                    </tr>
+                    <tr>
+                        <td>Discord Username</td>
+                        <td>Display on leaderboard</td>
+                        <td>Fetched live, not stored</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Section 2 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon"><i class="lucide-x-circle"></i></div>
+                <h2>2. Information We Do Not Collect</h2>
+            </div>
+            <p>Aurora does not collect, access, or store:</p>
+            <ul>
+                <li>Your email address or password</li>
+                <li>Private or direct messages</li>
+                <li>Messages in channels where Aurora is not mentioned or invoked</li>
+                <li>Voice channel data or audio</li>
+                <li>Server messages or chat history</li>
+                <li>Personal information beyond your Discord user ID</li>
+            </ul>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Section 3 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon"><i class="lucide-cpu"></i></div>
+                <h2>3. AI and Third-Party Services</h2>
+            </div>
+            <p>When you use the "Ask Aurora" feature, your question is sent to a third-party AI provider (currently Groq) to generate a response.</p>
+            <div class="card">
+                <p><strong>Important:</strong> Aurora does not store your AI conversations. However, the third-party AI provider may process and temporarily retain your input in accordance with their own privacy policy. We recommend not sharing sensitive personal information through the AI feature.</p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Section 4 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon"><i class="lucide-hard-drive"></i></div>
+                <h2>4. Data Storage and Security</h2>
+            </div>
+            <ul>
+                <li>All data is stored in a PostgreSQL database hosted on secure cloud infrastructure</li>
+                <li>Database access is restricted and not publicly accessible</li>
+                <li>We use encrypted connections for all database communications</li>
+                <li>No data is shared with third parties for advertising or analytics</li>
+            </ul>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Section 5 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon"><i class="lucide-clock"></i></div>
+                <h2>5. Data Retention</h2>
+            </div>
+            <p>Your data is retained for as long as you actively use Aurora. If you wish to have your data deleted, you may request deletion at any time (see Section 7). Upon request, all data associated with your Discord user ID will be permanently removed from our database within 30 days.</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Section 6 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon"><i class="lucide-baby"></i></div>
+                <h2>6. Children's Privacy</h2>
+            </div>
+            <p>Aurora is not intended for users under the age of 13, in compliance with Discord's Terms of Service and COPPA regulations. We do not knowingly collect data from children under 13. If we become aware that a user is under 13, their data will be promptly deleted.</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Section 7 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon"><i class="lucide-user-cog"></i></div>
+                <h2>7. Your Rights</h2>
+            </div>
+            <p>You have the right to:</p>
+            <ul>
+                <li><strong>Access</strong> — Request a copy of all data we store about you</li>
+                <li><strong>Delete</strong> — Request permanent deletion of all your data</li>
+                <li><strong>Rectify</strong> — Request correction of inaccurate data</li>
+                <li><strong>Withdraw</strong> — Stop using Aurora at any time by simply not interacting with the bot</li>
+            </ul>
+            <p>To exercise any of these rights, contact us through the channels listed in Section 9.</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Section 8 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon"><i class="lucide-pen-line"></i></div>
+                <h2>8. Changes to This Policy</h2>
+            </div>
+            <p>We may update this Privacy Policy from time to time. Changes will be reflected on this page with an updated "Last updated" date. Continued use of Aurora after changes are posted constitutes acceptance of the revised policy.</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Section 9 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon"><i class="lucide-mail"></i></div>
+                <h2>9. Contact</h2>
+            </div>
+            <p>For privacy-related questions, data requests, or concerns:</p>
+            <ul>
+                <li>GitHub: <a href="https://github.com/xau-aman/Aurora-Bot">github.com/xau-aman/Aurora-Bot</a></li>
+                <li>Discord: Open an issue or contact the developer directly</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        Aurora — Built by <a href="https://github.com/xau-aman">xau-aman</a>
+    </footer>
+</body>
+</html>

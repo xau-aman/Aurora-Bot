@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aurora — Terms of Service</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/lucide-static@latest/font/lucide.min.css">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0a0a0b;
+            color: #e4e4e7;
+            line-height: 1.7;
+            min-height: 100vh;
+        }
+
+        .grain {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        .glow {
+            position: fixed;
+            top: -200px; left: 50%;
+            transform: translateX(-50%);
+            width: 600px; height: 600px;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.12) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        nav {
+            position: sticky;
+            top: 0;
+            background: rgba(10, 10, 11, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 16px 0;
+            z-index: 100;
+        }
+
+        nav .inner {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav .logo {
+            font-size: 18px;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        nav .logo .dot {
+            width: 8px; height: 8px;
+            background: #7c3aed;
+            border-radius: 50%;
+            display: inline-block;
+        }
+
+        nav .links a {
+            color: #a1a1aa;
+            text-decoration: none;
+            font-size: 14px;
+            margin-left: 24px;
+            transition: color 0.2s;
+        }
+
+        nav .links a:hover { color: #fff; }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px 24px 100px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            color: #a78bfa;
+            font-size: 12px;
+            font-weight: 500;
+            padding: 6px 14px;
+            border-radius: 100px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        h1 {
+            font-size: 40px;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 8px;
+            letter-spacing: -0.5px;
+        }
+
+        .subtitle {
+            color: #71717a;
+            font-size: 15px;
+            margin-bottom: 48px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 16px;
+        }
+
+        .section-icon {
+            width: 36px; height: 36px;
+            background: rgba(124, 58, 237, 0.1);
+            border: 1px solid rgba(124, 58, 237, 0.15);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #a78bfa;
+            font-size: 16px;
+            flex-shrink: 0;
+        }
+
+        h2 {
+            font-size: 20px;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        p {
+            color: #a1a1aa;
+            font-size: 15px;
+            margin-bottom: 12px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 12px;
+        }
+
+        ul li {
+            color: #a1a1aa;
+            font-size: 15px;
+            padding: 6px 0;
+            padding-left: 24px;
+            position: relative;
+        }
+
+        ul li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 14px;
+            width: 6px; height: 6px;
+            background: #7c3aed;
+            border-radius: 50%;
+        }
+
+        .divider {
+            height: 1px;
+            background: rgba(255, 255, 255, 0.06);
+            margin: 40px 0;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.02);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            border-radius: 12px;
+            padding: 20px 24px;
+            margin-bottom: 12px;
+        }
+
+        .card strong {
+            color: #e4e4e7;
+        }
+
+        a { color: #a78bfa; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+
+        footer {
+            text-align: center;
+            padding: 40px 24px;
+            color: #52525b;
+            font-size: 13px;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            position: relative;
+            z-index: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="grain"></div>
+    <div class="glow"></div>
+
+    <nav>
+        <div class="inner">
+            <a href="#" class="logo"><span class="dot"></span> Aurora</a>
+            <div class="links">
+                <a href="terms.html">Terms</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="https://github.com/xau-aman/Aurora-Bot">GitHub</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="badge">
+            <i class="lucide-file-text" style="font-size: 12px;"></i>
+            Legal
+        </div>
+        <h1>Terms of Service</h1>
+        <p class="subtitle">Last updated: May 5, 2026</p>
+
+        <!-- Section 1 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon"><i class="lucide-scroll-text"></i></div>
+                <h2>1. Acceptance of Terms</h2>
+            </div>
+            <p>By adding Aurora to your Discord server or interacting with the bot in any way, you agree to be bound by these Terms of Service. If you do not agree with any part of these terms, you must discontinue use immediately.</p>
+            <p>Aurora is a Discord bot operated by an independent developer. These terms govern your access to and use of the bot and all related services.</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Section 2 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon"><i class="lucide-bot"></i></div>
+                <h2>2. Description of Service</h2>
+            </div>
+            <p>Aurora is an AI-powered Discord bot that provides:</p>
+            <ul>
+                <li>Daily coding questions and topic-based practice</li>
+                <li>Solution submission and XP-based gamification</li>
+                <li>A personal notes system (second brain)</li>
+                <li>AI-powered Q&A for coding, CS theory, and interview preparation</li>
+                <li>Leaderboards and streak tracking</li>
+            </ul>
+            <p>The service is provided "as is" and may be modified, updated, or discontinued at any time without prior notice.</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Section 3 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon"><i class="lucide-user-check"></i></div>
+                <h2>3. Eligibility</h2>
+            </div>
+            <p>You must be at least 13 years of age to use Aurora, in compliance with Discord's own Terms of Service. By using the bot, you represent that you meet this age requirement.</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Section 4 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon"><i class="lucide-shield-check"></i></div>
+                <h2>4. User Conduct</h2>
+            </div>
+            <p>When using Aurora, you agree not to:</p>
+            <ul>
+                <li>Abuse, exploit, or attempt to disrupt the bot or its infrastructure</li>
+                <li>Submit malicious code, spam, or harmful content through any command</li>
+                <li>Use the bot to harass, threaten, or harm other users</li>
+                <li>Attempt to reverse-engineer, decompile, or extract the bot's source code or AI models</li>
+                <li>Use automated tools to interact with the bot at scale without permission</li>
+                <li>Violate Discord's Terms of Service or Community Guidelines while using Aurora</li>
+            </ul>
+            <p>Violation of these rules may result in being blocked from using Aurora without notice.</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Section 5 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon"><i class="lucide-database"></i></div>
+                <h2>5. Data and Content</h2>
+            </div>
+            <div class="card">
+                <p><strong>What we store:</strong> Your Discord user ID, XP, streak data, submitted solutions, and notes you create. We do not store your Discord password, email, or any private messages.</p>
+            </div>
+            <div class="card">
+                <p><strong>Your content:</strong> Notes and code submissions you create through Aurora remain your intellectual property. By submitting content, you grant Aurora a limited license to store and display it back to you within the bot's functionality.</p>
+            </div>
+            <div class="card">
+                <p><strong>AI interactions:</strong> Questions sent to the AI assistant are processed by third-party AI providers. These interactions are not permanently stored by Aurora but may be subject to the AI provider's own data policies.</p>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Section 6 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon"><i class="lucide-alert-triangle"></i></div>
+                <h2>6. Disclaimers</h2>
+            </div>
+            <ul>
+                <li>Aurora is an educational tool and does not guarantee accuracy of AI-generated responses</li>
+                <li>The bot is not a substitute for professional career advice, legal counsel, or academic instruction</li>
+                <li>Coding solutions and explanations are for learning purposes only</li>
+                <li>Uptime is not guaranteed — the service may experience downtime for maintenance or technical issues</li>
+                <li>XP, streaks, and leaderboard data may be reset during major updates</li>
+            </ul>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Section 7 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon"><i class="lucide-scale"></i></div>
+                <h2>7. Limitation of Liability</h2>
+            </div>
+            <p>To the maximum extent permitted by law, Aurora and its developer shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising from your use of the bot. This includes but is not limited to loss of data, loss of profits, or damages resulting from reliance on AI-generated content.</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Section 8 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon"><i class="lucide-ban"></i></div>
+                <h2>8. Termination</h2>
+            </div>
+            <p>We reserve the right to restrict or terminate your access to Aurora at any time, for any reason, without prior notice. This includes but is not limited to violations of these terms, abuse of the service, or behavior that negatively impacts other users.</p>
+            <p>You may stop using Aurora at any time by simply not interacting with the bot or removing it from your server.</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Section 9 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon"><i class="lucide-pen-line"></i></div>
+                <h2>9. Changes to Terms</h2>
+            </div>
+            <p>We may update these Terms of Service from time to time. Continued use of Aurora after changes are posted constitutes acceptance of the revised terms. We recommend reviewing this page periodically.</p>
+        </div>
+
+        <div class="divider"></div>
+
+        <!-- Section 10 -->
+        <div class="section">
+            <div class="section-header">
+                <div class="section-icon"><i class="lucide-mail"></i></div>
+                <h2>10. Contact</h2>
+            </div>
+            <p>If you have questions about these terms, reach out via:</p>
+            <ul>
+                <li>GitHub: <a href="https://github.com/xau-aman/Aurora-Bot">github.com/xau-aman/Aurora-Bot</a></li>
+                <li>Discord: Open an issue or contact the developer directly</li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        Aurora — Built by <a href="https://github.com/xau-aman">xau-aman</a>
+    </footer>
+</body>
+</html>
